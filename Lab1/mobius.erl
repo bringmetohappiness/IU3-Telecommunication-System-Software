@@ -13,7 +13,7 @@ is_prime_helper(N, Divisor) when Divisor * Divisor =< N ->
 	end.
 
 
-% Функция возвращает список простых сомножителей числа
+% Функция возвращает список простых сомножителей числа.
 prime_factors(N) -> prime_factors_helper(N, 2, [1]).
 
 prime_factors_helper(1, 2, [1]) -> [1];
@@ -26,7 +26,7 @@ prime_factors_helper(N, Factor, List) when N /= Factor ->
 	end.
 
 
-% Функция проверяет делимость на квадрат простого числа
+% Функция проверяет делимость на квадрат простого числа.
 is_square_multiple(N) -> 
 	List1 = prime_factors(N), 
 	List2 = lists:usort(prime_factors(N)),
@@ -36,7 +36,7 @@ is_square_multiple(N) ->
 	end.
 
 
-% Итоговая функция	
+% Итоговая функция.
 find_square_multiples(Count, MaxN) -> find_square_multiples_helper(Count, MaxN, 2, sets:new()).
 
 find_square_multiples_helper(Count, MaxN, N, Set) when N < MaxN + Count -> 
